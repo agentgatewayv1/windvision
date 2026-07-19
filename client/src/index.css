@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* LIGHT MODE — roofsat geospatial palette */
+:root {
+  --button-outline: rgba(0, 0, 0, 0.08);
+  --badge-outline: rgba(0, 0, 0, 0.05);
+  --opaque-button-border-intensity: -8;
+  --elevate-1: rgba(0, 0, 0, 0.03);
+  --elevate-2: rgba(0, 0, 0, 0.06);
+  --background: 210 20% 98%;
+  --foreground: 220 30% 10%;
+  --border: 215 15% 90%;
+  --card: 0 0% 100%;
+  --card-foreground: 220 30% 10%;
+  --card-border: 215 15% 92%;
+  --sidebar: 215 20% 96%;
+  --sidebar-foreground: 220 30% 10%;
+  --sidebar-border: 215 15% 90%;
+  --sidebar-primary: 189 85% 40%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 215 20% 92%;
+  --sidebar-accent-foreground: 220 30% 10%;
+  --sidebar-ring: 189 85% 40%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 220 30% 10%;
+  --popover-border: 215 15% 90%;
+  --primary: 189 85% 38%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 215 15% 92%;
+  --secondary-foreground: 220 30% 10%;
+  --muted: 215 15% 94%;
+  --muted-foreground: 215 12% 42%;
+  --accent: 189 55% 92%;
+  --accent-foreground: 189 85% 20%;
+  --destructive: 0 75% 48%;
+  --destructive-foreground: 0 0% 100%;
+  --input: 215 15% 82%;
+  --ring: 189 85% 40%;
+  --chart-1: 189 85% 40%;
+  --chart-2: 220 60% 45%;
+  --chart-3: 152 55% 40%;
+  --chart-4: 38 92% 50%;
+  --chart-5: 0 75% 55%;
+  /* Confidence bands */
+  --confidence-high: 152 60% 42%;
+  --confidence-medium: 38 92% 50%;
+  --confidence-low: 0 75% 52%;
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  --radius: 0.5rem;
+  --shadow-2xs: 0px 2px 0px 0px hsl(0 0% 0% / 0);
+  --shadow-xs: 0px 2px 0px 0px hsl(0 0% 0% / 0);
+  --shadow-sm: 0px 2px 0px 0px hsl(0 0% 0% / 0), 0px 1px 2px -1px hsl(0 0% 0% / 0);
+  --shadow: 0px 2px 0px 0px hsl(0 0% 0% / 0), 0px 1px 2px -1px hsl(0 0% 0% / 0);
+  --shadow-md: 0px 2px 0px 0px hsl(0 0% 0% / 0), 0px 2px 4px -1px hsl(0 0% 0% / 0);
+  --shadow-lg: 0px 2px 0px 0px hsl(0 0% 0% / 0), 0px 4px 6px -1px hsl(0 0% 0% / 0);
+  --shadow-xl: 0px 2px 0px 0px hsl(0 0% 0% / 0), 0px 8px 10px -1px hsl(0 0% 0% / 0);
+  --shadow-2xl: 0px 2px 0px 0px hsl(0 0% 0% / 0);
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+
+  /* Fallback for older browsers */
+  --sidebar-primary-border: hsl(var(--sidebar-primary));
+  --sidebar-primary-border: hsl(
+    from hsl(var(--sidebar-primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha
+  );
+  --sidebar-accent-border: hsl(var(--sidebar-accent));
+  --sidebar-accent-border: hsl(
+    from hsl(var(--sidebar-accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha
+  );
+  --primary-border: hsl(var(--primary));
+  --primary-border: hsl(
+    from hsl(var(--primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha
+  );
+  --secondary-border: hsl(var(--secondary));
+  --secondary-border: hsl(
+    from hsl(var(--secondary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha
+  );
+  --muted-border: hsl(var(--muted));
+  --muted-border: hsl(
+    from hsl(var(--muted)) h s calc(l + var(--opaque-button-border-intensity)) / alpha
+  );
+  --accent-border: hsl(var(--accent));
+  --accent-border: hsl(
+    from hsl(var(--accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha
+  );
+  --destructive-border: hsl(var(--destructive));
+  --destructive-border: hsl(
+    from hsl(var(--destructive)) h s calc(l + var(--opaque-button-border-intensity)) / alpha
+  );
+}
+
+.dark {
+  --button-outline: rgba(255, 255, 255, 0.1);
+  --badge-outline: rgba(255, 255, 255, 0.05);
+  --opaque-button-border-intensity: 9;
+  --elevate-1: rgba(255, 255, 255, 0.04);
+  --elevate-2: rgba(255, 255, 255, 0.08);
+  --background: 220 30% 7%;
+  --foreground: 210 20% 96%;
+  --border: 220 20% 18%;
+  --card: 220 25% 10%;
+  --card-foreground: 210 20% 96%;
+  --card-border: 220 20% 16%;
+  --sidebar: 220 28% 9%;
+  --sidebar-foreground: 210 20% 96%;
+  --sidebar-border: 220 20% 18%;
+  --sidebar-primary: 189 85% 55%;
+  --sidebar-primary-foreground: 220 30% 8%;
+  --sidebar-accent: 220 20% 15%;
+  --sidebar-accent-foreground: 210 20% 96%;
+  --sidebar-ring: 189 85% 55%;
+  --popover: 220 25% 11%;
+  --popover-foreground: 210 20% 96%;
+  --popover-border: 220 20% 18%;
+  --primary: 189 85% 55%;
+  --primary-foreground: 220 30% 8%;
+  --secondary: 220 20% 15%;
+  --secondary-foreground: 210 20% 96%;
+  --muted: 220 18% 16%;
+  --muted-foreground: 215 15% 65%;
+  --accent: 189 40% 20%;
+  --accent-foreground: 189 85% 80%;
+  --destructive: 0 75% 55%;
+  --destructive-foreground: 210 20% 96%;
+  --input: 220 20% 22%;
+  --ring: 189 85% 55%;
+  --chart-1: 189 85% 60%;
+  --chart-2: 220 60% 65%;
+  --chart-3: 152 55% 55%;
+  --chart-4: 38 92% 60%;
+  --chart-5: 0 75% 60%;
+  --confidence-high: 152 55% 55%;
+  --confidence-medium: 38 92% 60%;
+  --confidence-low: 0 75% 60%;
+  --shadow-2xs: 0px 2px 0px 0px hsl(0 0% 0% / 0);
+  --shadow-xs: 0px 2px 0px 0px hsl(0 0% 0% / 0);
+  --shadow-sm: 0px 2px 0px 0px hsl(0 0% 0% / 0), 0px 1px 2px -1px hsl(0 0% 0% / 0);
+  --shadow: 0px 2px 0px 0px hsl(0 0% 0% / 0), 0px 1px 2px -1px hsl(0 0% 0% / 0);
+  --shadow-md: 0px 2px 0px 0px hsl(0 0% 0% / 0), 0px 2px 4px -1px hsl(0 0% 0% / 0);
+  --shadow-lg: 0px 2px 0px 0px hsl(0 0% 0% / 0), 0px 4px 6px -1px hsl(0 0% 0% / 0);
+  --shadow-xl: 0px 2px 0px 0px hsl(0 0% 0% / 0), 0px 8px 10px -1px hsl(0 0% 0% / 0);
+  --shadow-2xl: 0px 2px 0px 0px hsl(0 0% 0% / 0);
+  --sidebar-primary-border: hsl(var(--sidebar-primary));
+  --sidebar-primary-border: hsl(
+    from hsl(var(--sidebar-primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha
+  );
+  --sidebar-accent-border: hsl(var(--sidebar-accent));
+  --sidebar-accent-border: hsl(
+    from hsl(var(--sidebar-accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha
+  );
+  --primary-border: hsl(var(--primary));
+  --primary-border: hsl(
+    from hsl(var(--primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha
+  );
+  --secondary-border: hsl(var(--secondary));
+  --secondary-border: hsl(
+    from hsl(var(--secondary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha
+  );
+  --muted-border: hsl(var(--muted));
+  --muted-border: hsl(
+    from hsl(var(--muted)) h s calc(l + var(--opaque-button-border-intensity)) / alpha
+  );
+  --accent-border: hsl(var(--accent));
+  --accent-border: hsl(
+    from hsl(var(--accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha
+  );
+  --destructive-border: hsl(var(--destructive));
+  --destructive-border: hsl(
+    from hsl(var(--destructive)) h s calc(l + var(--opaque-button-border-intensity)) / alpha
+  );
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-feature-settings: 'ss01', 'cv11';
+  }
+
+  .font-mono, code, pre {
+    font-feature-settings: 'zero', 'ss01';
+  }
+}
+
+@layer utilities {
+  .text-confidence-high { color: hsl(var(--confidence-high)); }
+  .text-confidence-medium { color: hsl(var(--confidence-medium)); }
+  .text-confidence-low { color: hsl(var(--confidence-low)); }
+  .bg-confidence-high { background-color: hsl(var(--confidence-high)); }
+  .bg-confidence-medium { background-color: hsl(var(--confidence-medium)); }
+  .bg-confidence-low { background-color: hsl(var(--confidence-low)); }
+  .border-confidence-high { border-color: hsl(var(--confidence-high)); }
+  .border-confidence-medium { border-color: hsl(var(--confidence-medium)); }
+  .border-confidence-low { border-color: hsl(var(--confidence-low)); }
+
+  /* Grid pattern for hero background */
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, hsl(var(--border) / 0.4) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--border) / 0.4) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  /* Subtle noise for basemap loading skeleton */
+  .bg-noise {
+    background-image: radial-gradient(hsl(var(--muted-foreground) / 0.05) 1px, transparent 1px);
+    background-size: 4px 4px;
+  }
+}
+
+@layer utilities {
+  input[type='search']::-webkit-search-cancel-button {
+    @apply hidden;
+  }
+
+  [contenteditable][data-placeholder]:empty::before {
+    content: attr(data-placeholder);
+    color: hsl(var(--muted-foreground));
+    pointer-events: none;
+  }
+
+  .no-default-hover-elevate {
+  }
+
+  .no-default-active-elevate {
+  }
+
+  .toggle-elevate::before,
+  .toggle-elevate-2::before {
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    z-index: -1;
+  }
+
+  .toggle-elevate.toggle-elevated::before {
+    background-color: var(--elevate-2);
+  }
+
+  .border.toggle-elevate::before {
+    inset: -1px;
+  }
+
+  .hover-elevate:not(.no-default-hover-elevate),
+  .active-elevate:not(.no-default-active-elevate),
+  .hover-elevate-2:not(.no-default-hover-elevate),
+  .active-elevate-2:not(.no-default-active-elevate) {
+    position: relative;
+    z-index: 0;
+  }
+
+  .hover-elevate:not(.no-default-hover-elevate)::after,
+  .active-elevate:not(.no-default-active-elevate)::after,
+  .hover-elevate-2:not(.no-default-hover-elevate)::after,
+  .active-elevate-2:not(.no-default-active-elevate)::after {
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    z-index: 999;
+  }
+
+  .hover-elevate:hover:not(.no-default-hover-elevate)::after,
+  .active-elevate:active:not(.no-default-active-elevate)::after {
+    background-color: var(--elevate-1);
+  }
+
+  .hover-elevate-2:hover:not(.no-default-hover-elevate)::after,
+  .active-elevate-2:active:not(.no-default-active-elevate)::after {
+    background-color: var(--elevate-2);
+  }
+
+  .border.hover-elevate:not(.no-hover-interaction-elevate)::after,
+  .border.active-elevate:not(.no-active-interaction-elevate)::after,
+  .border.hover-elevate-2:not(.no-hover-interaction-elevate)::after,
+  .border.active-elevate-2:not(.no-active-interaction-elevate)::after,
+  .border.hover-elevate:not(.no-hover-interaction-elevate)::after {
+    inset: -1px;
+  }
+}
+
+/* Print styles for the report view */
+@media print {
+  body {
+    background: white !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-block {
+    display: block !important;
+  }
+  .print-page {
+    color: #111 !important;
+  }
+  .print-page * {
+    border-color: #ddd !important;
+    box-shadow: none !important;
+  }
+}
