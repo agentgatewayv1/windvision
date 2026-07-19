@@ -1,4 +1,4 @@
-# Roofsat webapp
+# Windvision
 
 Web frontend for the Roofsat roof measurement pipeline. Talks to the Python API at [agentgatewayv1/roofsat](https://github.com/agentgatewayv1/roofsat).
 
